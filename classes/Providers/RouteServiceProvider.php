@@ -15,7 +15,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        parent::boot($router);
+        if (config('app.debug')) {
+            parent::boot($router);
+        }
     }
 
     /**
